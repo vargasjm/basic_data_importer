@@ -9,18 +9,20 @@
 #     #for row in csv_text:
 #     print(csv_text)
 
-# import csv
-# import pandas as pd
+import csv
+import pandas as pd
 import mysql.connector
 
 mydb = mysql.connector.connect(host="localhost", user="testuser", password="1234")
+
+request = input("File requested: ")
+data = pd.read_csv(request)
 
 mycursor = mydb.cursor()
 mycursor.execute("SHOW DATABASES")
 
 for x in mycursor:
     print(x)
-# request = input("File requested: ")
+    
 
-# data = pd.read_csv(request)
 # print(data)
